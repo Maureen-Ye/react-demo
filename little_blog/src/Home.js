@@ -1,10 +1,12 @@
 import {useState, useEffect} from 'react';
 import BlogList from "./components/Common template/BlogList";
+import useFetch from "./usefetch";
 
 
 const Home = () => {
-  const [blogs, setBlogs] = useState(null)
-  const [inLoading, setInLoading] = useState(true)
+  /*使用hock*/
+  const {data:blogs, inLoading, err} = useFetch('http://localhost:8000/blogs')
+
   // const [name, setName] = useState('mario');
 
   // const handleDelete = (id) => {
@@ -13,24 +15,10 @@ const Home = () => {
   //   setBlogs(newBlogs);
   // }
 
-  useEffect(() => {
-    //重新更新数据时，它讲重新呈现给dom
-    //[]依赖项，删除时不会被运行，但改变时会绑定name，setName执行后状态不会再改变和重新渲染，因为此时已经变成了luigi
-    setTimeout(() => {
-      fetch('  http://localhost:8000/blogs')
-          .then(res => {
-            return res.json();
-          })
-          .then(data => {
-            setBlogs(data);
-            setInLoading(false);
-          });
-    },1000)
-  }, []);
-
 
   return (
       <div className="home">
+        {err && <div>{err}</div>}
         {blogs && <BlogList blogs={blogs} title="All Blogs"/>}
         {inLoading && <div>Loading....</div>}
         {/*<BlogList blogs= {blogs.filter((blog)=>blog.author === 'mario')} title='Mario`s blog'></BlogList>*/}
