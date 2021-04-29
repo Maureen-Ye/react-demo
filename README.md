@@ -1,5 +1,5 @@
 # react-demo
 
-npm run json
+The first terminal：npm run json
 
-npm run start
+The another terminal：npm run start
