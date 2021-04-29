@@ -1,11 +1,11 @@
-import {useState, useEffect} from 'react';
+
 import BlogList from "./components/Common template/BlogList";
 import useFetch from "./usefetch";
 
 
 const Home = () => {
   /*使用hock*/
-  const {data:blogs, inLoading, err} = useFetch('http://localhost:8000/blogs')
+  const {data:blog, inLoading, err} = useFetch('http://localhost:8000/blogs')
 
   // const [name, setName] = useState('mario');
 
@@ -19,7 +19,7 @@ const Home = () => {
   return (
       <div className="home">
         {err && <div>{err}</div>}
-        {blogs && <BlogList blogs={blogs} title="All Blogs"/>}
+        {blog && <BlogList blogs={blog} title="All Blogs"/>}
         {inLoading && <div>Loading....</div>}
         {/*<BlogList blogs= {blogs.filter((blog)=>blog.author === 'mario')} title='Mario`s blog'></BlogList>*/}
         {/*<button onClick={() => setName('luigi')}>change me</button>
