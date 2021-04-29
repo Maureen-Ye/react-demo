@@ -1,4 +1,4 @@
-I'm glad you asked to open this document. I have some problems.
+I'm glad you could to open this document. I have some problem.
 
-Why can't id get and display my content in react router V6? But the absolute path can be displayed? It does not appear to be used in the V6 documentation.
-In the little blog project, app.js and blogdetail.js in SRC directory are my problem files
+Why  in the react router V6 can't  get id and display my content? But the absolute path can be displayed? It does not appear to be used in the V6 documentation.
+In the little blog project, app.js and blogdetail.js in src directory are my problem files
