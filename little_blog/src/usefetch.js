@@ -31,7 +31,7 @@ const useFetch = (url) => {
               setErr(err.message)
             }
           })
-    }, 500)
+    },500 )
 
     return() => abortCount.abort();
   }, [url]);
